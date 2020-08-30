@@ -1,0 +1,118 @@
+* {
+  vertical-align: top;
+  backface-visibility: hidden;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.center_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+h2 {
+  margin-bottom: 30px;
+  color: #585858;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  border: solid 1px black;
+  padding: 4px 12px;
+  border-radius: 4px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #585858;
+  color: white;
+}
+button i {
+  margin-left: 7px;
+  margin-top: 3px;
+}
+button i.fa-circle {
+  color: #cc0000;
+}
+
+.notes_list li {
+  display: inline-block;
+  border-right: solid 1px black;
+  padding: 2px 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.notes_list li .time {
+  font-size: 8px;
+  opacity: 0.3;
+}
+.notes_list li .num {
+  font-size: 16px;
+}
+.notes_list li:hover {
+  background-color: #e1e1e1;
+}
+.notes_list li.playing {
+  background-color: #d5d5d5;
+}
+
+.keyboard {
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.4);
+  display: inline-block;
+  margin-bottom: 30px;
+}
+.keyboard .pianokey {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+.keyboard .pianokey .white.playing {
+  background-color: #d5d5d5;
+  transform: translate(0px, 0px);
+}
+.keyboard .pianokey .black.playing {
+  background-color: #727272;
+  transform: translate(0px, 0px);
+}
+.keyboard .pianokey .white {
+  width: 44px;
+  height: 300px;
+  border: solid 1px #eee;
+  transform: translate(-3px, -3px);
+  transition: 0.1s;
+}
+.keyboard .pianokey .white:hover {
+  transform: translate(0px, 0px);
+  background-color: #eee;
+}
+.keyboard .pianokey .black {
+  width: 22px;
+  height: 165px;
+  background-color: #585858;
+  margin-left: -11px;
+  margin-right: -11px;
+  position: absolute;
+  z-index: 20;
+  transform: translate(-3px, -3px);
+}
+.keyboard .pianokey .black:hover {
+  background-color: #3f3f3f;
+}
+.keyboard .pianokey label {
+  position: absolute;
+  color: #a5a5a5;
+  bottom: -25px;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 8px;
+}

@@ -1,0 +1,104 @@
+$key_width: 44px
+$key_height: 300px
+$color_white: #eee
+$color_black: #585858
+
+*
+  vertical-align: top
+  backface-visibility: hidden
+
+@mixin size($w,$h)
+  width: $w
+  height: $h
+
+html, body
+  +size(100%,100%)
+  padding: 0
+  margin: 0
+
+.center_box
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 100%
+  text-align: center
+  transform: translate(-50%,-50%)
+h2
+  margin-bottom: 30px
+  color: $color_black
+  
+button
+  background-color: transparent
+  border: none
+  border: solid 1px black
+  padding: 4px 12px
+  border-radius: 4px
+  transition: 0.5s
+  cursor: pointer
+  &:hover
+    background-color: $color_black
+    color: white
+  i
+    margin-left: 7px
+    margin-top: 3px
+  i.fa-circle
+    color: darken(red,10)
+  
+.notes_list
+  li
+    display: inline-block
+    border-right: solid 1px black
+    padding: 2px 5px
+    cursor: pointer
+    transition: 0.3s
+    .time
+      font-size: 8px
+      opacity: 0.3
+    .num
+      font-size: 16px
+    &:hover
+      background-color: darken($color_white,5)
+    &.playing
+      background-color: darken($color_white,10)
+.keyboard
+  box-shadow: 0px 0px 20px -5px rgba(0,0,0,0.4)
+  display: inline-block
+  margin-bottom: 30px
+  .pianokey
+    display: inline-block
+    position: relative
+    cursor: pointer 
+    .white.playing
+      background-color: darken($color_white,10)
+      transform: translate(0px,0px)
+    .black.playing
+      background-color: lighten($color_black,10)
+      transform: translate(0px,0px)
+    .white
+      +size($key_width,$key_height)
+      border: solid 1px $color_white
+      transform: translate(-3px, -3px)
+      transition: 0.1s
+      &:hover
+        transform: translate(0px, 0px)
+        background-color: $color_white
+    .black
+      +size($key_width/2,$key_height*0.55)
+      background-color: $color_black
+      margin-left: -$key_width/4
+      margin-right: -$key_width/4
+      position: absolute
+      z-index: 20
+      transform: translate(-3px, -3px)
+      &:hover
+        background-color: darken($color_black, 10)
+    label
+      position: absolute
+      color: lighten($color_black, 30)
+      bottom: -25px
+      left: 50%
+      transform: translate(-50%)
+      font-size: 8px
+
+
+    

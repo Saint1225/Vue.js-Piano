@@ -1,6 +1,6 @@
 # Vue.js Piano Project
 
-Interactive Piano with record/replay features and built up by Vue.js
+Interactive Piano with record/replay features, created by Vue.js
 
 HTML(pug) / CSS(SASS) / Vue.js(Ajax, jQuery)
 
